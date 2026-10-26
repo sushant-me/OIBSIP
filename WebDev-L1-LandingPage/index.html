@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aether — A focus workspace for deep work</title>
+  <meta name="description" content="Aether is a calm, single-purpose workspace for deep work: one timer, three meaningful tasks, and an honest look at your day. No feeds, no noise.">
+  <meta name="theme-color" content="#10201C">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Aether home">
+        <img class="brand__mark" src="assets/logo-mark.svg" alt="" width="34" height="34">
+        <span class="brand__name">Aether</span>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#stories">Demo</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+
+      <a class="btn btn--primary btn--small nav__cta" href="#pricing">Start free</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+            Aether 2.0 — now with session replay
+          </p>
+          <h1 class="hero__title" id="hero-title">Make room for the work that matters.</h1>
+          <p class="hero__subtitle">
+            Aether is a calm, single-purpose workspace for deep work — one timer, three meaningful tasks,
+            and an honest look at your day. No feeds. No dashboards to fiddle with. No noise.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#pricing">Start a free focus block</a>
+            <a class="btn btn--ghost" href="#how">See how it works</a>
+          </div>
+          <p class="hero__meta">Free for solo makers · No card required · Works offline</p>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="app-window">
+            <div class="app-window__bar">
+              <span class="window-dots"><i></i><i></i><i></i></span>
+              <span class="app-window__title">Today · Deep work</span>
+            </div>
+            <div class="app-window__body">
+              <div class="timer">
+                <svg class="timer__ring" viewBox="0 0 120 120" focusable="false">
+                  <circle class="timer__track" cx="60" cy="60" r="52" fill="none" stroke-width="8"></circle>
+                  <circle class="timer__progress" cx="60" cy="60" r="52" fill="none" stroke-width="8"
+                          stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="96"></circle>
+                </svg>
+                <div class="timer__readout">
+                  <strong>24:18</strong>
+                  <span>Focus block</span>
+                </div>
+              </div>
+              <ul class="task-list">
+                <li class="is-done"><span class="task-check" aria-hidden="true"></span>Outline the launch essay</li>
+                <li class="is-active"><span class="task-check" aria-hidden="true"></span>Draft the onboarding flow</li>
+                <li><span class="task-check" aria-hidden="true"></span>Reply to the three waiting threads</li>
+              </ul>
+            </div>
+            <div class="app-window__footer">
+              <span class="pill pill--sage">Focus mode on</span>
+              <span class="pill">3 sessions today</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust container">
+        <p class="trust__label">A fictional product, built as a front-end demo</p>
+        <ul class="trust__list">
+          <li>One timer</li>
+          <li>Three priorities</li>
+          <li>Zero feeds</li>
+          <li>Offline-first</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__kicker">Features</p>
+          <h2 class="section__title" id="features-title">Built for the way focus actually works.</h2>
+          <p class="section__lead">
+            Most tools ask you to manage them. Aether asks one question — what matters today — and then
+            gets out of the way until the session ends.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <circle cx="12" cy="12" r="8.5"></circle>
+                <circle cx="12" cy="12" r="3.4"></circle>
+                <path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6"></path>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">One-click focus blocks</h3>
+            <p class="feature-card__text">
+              Choose 25, 50 or 90 minutes and start. Aether dims everything else and ends the block with
+              a soft chime — not a notification pile.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M4 6.5h16M4 12h10.5M4 17.5h7"></path>
+                <path d="M17 14.6l2 2 3.2-3.6"></path>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Task triage that respects you</h3>
+            <p class="feature-card__text">
+              Each morning Aether asks for the three things that would make today matter. Everything else
+              waits quietly in the backlog.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M6 3.5h9.5L20 8v12.5H6z"></path>
+                <path d="M15 3.5V8h4.5M9.2 12.5h7.6M9.2 16.4h5.2"></path>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Session notes, auto-tied</h3>
+            <p class="feature-card__text">
+              Jot a line the moment you stop. Notes attach to both the session and the task, so context
+              survives the end of the day.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M4 20V10M10 20V4.5M16 20v-7M22 20V7.5"></path>
+                <path d="M2.5 20h19"></path>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Quiet analytics</h3>
+            <p class="feature-card__text">
+              Weekly truth instead of vanity charts: deep-work hours, interruptions, and the tasks you
+              actually finished — delivered in one calm email.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <path d="M3.5 8.5a15.5 15.5 0 0 1 17 0"></path>
+                <path d="M6.5 12.4a10.6 10.6 0 0 1 11 0"></path>
+                <path d="M9.4 16.2a5.8 5.8 0 0 1 5.2 0"></path>
+                <circle cx="12" cy="19.6" r="1.1" fill="currentColor" stroke="none"></circle>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Offline by default</h3>
+            <p class="feature-card__text">
+              Every session is written locally first and syncs when you are ready. Your focus data never
+              depends on a connection.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                <circle cx="9" cy="8.3" r="3.1"></circle>
+                <path d="M3.4 19.2c.5-3.1 2.8-5 5.6-5s5.1 1.9 5.6 5"></path>
+                <path d="M16.2 6.2a3.4 3.4 0 0 1 0 6.5M18.3 14.7c1.7.8 2.6 2.4 2.9 4.5"></path>
+              </svg>
+            </span>
+            <h3 class="feature-card__title">Your team, without the surveillance</h3>
+            <p class="feature-card__text">
+              Share availability, not keystrokes. Teammates see when you are heads-down and when you are
+              free — never what is on your screen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ink" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section__head section__head--light">
+          <p class="section__kicker">How it works</p>
+          <h2 class="section__title" id="how-title">Three steps. Then silence.</h2>
+          <p class="section__lead">
+            No onboarding maze, no setup ritual. Aether is designed so the product disappears while the
+            work happens.
+          </p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__number">01</span>
+            <h3 class="step__title">Pick three</h3>
+            <p class="step__text">
+              Open Aether and write the three outcomes that would make today count. Aether keeps them
+              pinned until you close them or deliberately drop them.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step__number">02</span>
+            <h3 class="step__title">Start the block</h3>
+            <p class="step__text">
+              Pick a length and press start. The screen fades, the timer becomes the only moving thing,
+              and the session is captured automatically.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step__number">03</span>
+            <h3 class="step__title">Close the loop</h3>
+            <p class="step__text">
+              End with one line of reflection. Tomorrow begins with context instead of guesswork — and
+              the week ends with an honest summary.
+            </p>
+          </li>
+        </ol>
+
+        <div class="how-note">
+          <p>
+            <strong>The whole idea in one line:</strong> pick three things, start a timer, write one line at the end.
+            <span>Everything else in Aether is optional.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--warm" id="stories" aria-labelledby="stories-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__kicker">Demo content</p>
+          <h2 class="section__title" id="stories-title">What a testimonial section would hold.</h2>
+          <p class="section__lead">
+            Aether is a fictional product, so the quotes below are placeholder copy written to show
+            the layout. They are not real reviews or real people.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <figure class="testimonial">
+            <blockquote>
+              “I have tried every productivity app that exists. Aether is the first one that made me
+              finish things instead of organising them. The three-task rule is quietly ruthless.”
+            </blockquote>
+            <figcaption class="testimonial__author">
+              <span class="avatar" aria-hidden="true">S1</span>
+              <span>
+                <strong>Sample persona</strong>
+                <span>Staff engineer · placeholder quote</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial">
+            <blockquote>
+              “The weekly summary is the only analytics I have ever read twice. It tells me where the
+              hours went without turning my work into a leaderboard.”
+            </blockquote>
+            <figcaption class="testimonial__author">
+              <span class="avatar avatar--sage" aria-hidden="true">S2</span>
+              <span>
+                <strong>Sample persona</strong>
+                <span>Design lead · placeholder quote</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial testimonial--wide">
+            <blockquote>
+              “We replaced three tools and a weekly status meeting with Aether. The team shares
+              availability, not screen time, and nobody misses the meeting.”
+            </blockquote>
+            <figcaption class="testimonial__author">
+              <span class="avatar avatar--gold" aria-hidden="true">S3</span>
+              <span>
+                <strong>Sample persona</strong>
+                <span>Head of product · placeholder quote</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>25 / 50 / 90</strong>
+            <span>minute focus block lengths</span>
+          </div>
+          <div class="stat">
+            <strong>3</strong>
+            <span>priorities per day, no more</span>
+          </div>
+          <div class="stat">
+            <strong>0</strong>
+            <span>feeds, streaks or notification badges</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__kicker">Pricing</p>
+          <h2 class="section__title" id="pricing-title">Simple pricing for serious focus.</h2>
+          <p class="section__lead">
+            Start free, forever. Upgrade when Aether has already earned the hour back.
+          </p>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card">
+            <h3 class="price-card__name">Solo</h3>
+            <p class="price-card__desc">For one person protecting one very good hour.</p>
+            <p class="price-card__price"><span class="price-card__amount">$0</span><span class="price-card__period">forever</span></p>
+            <ul class="price-card__list">
+              <li>Unlimited focus blocks</li>
+              <li>Three-task daily plan</li>
+              <li>Session notes</li>
+              <li>Weekly summary email</li>
+            </ul>
+            <a class="btn btn--outline btn--block" href="#top">Start free</a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <p class="price-card__badge">Most popular</p>
+            <h3 class="price-card__name">Studio</h3>
+            <p class="price-card__desc">For makers who want the full picture of their week.</p>
+            <p class="price-card__price"><span class="price-card__amount">$12</span><span class="price-card__period">per month</span></p>
+            <ul class="price-card__list">
+              <li>Everything in Solo</li>
+              <li>Session replay &amp; distraction log</li>
+              <li>Custom block lengths</li>
+              <li>Offline-first sync across devices</li>
+              <li>Export your focus history</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#top">Try Studio free for 14 days</a>
+          </article>
+
+          <article class="price-card">
+            <h3 class="price-card__name">Team</h3>
+            <p class="price-card__desc">For teams that protect each other's deep work.</p>
+            <p class="price-card__price"><span class="price-card__amount">$9</span><span class="price-card__period">per seat / month</span></p>
+            <ul class="price-card__list">
+              <li>Everything in Studio</li>
+              <li>Shared availability, private sessions</li>
+              <li>Team focus report</li>
+              <li>SSO &amp; admin controls</li>
+            </ul>
+            <a class="btn btn--outline btn--block" href="#top">Talk to us</a>
+          </article>
+        </div>
+
+        <p class="price-note">All prices in USD. Cancel any time — your session history stays yours.</p>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container cta-band__inner">
+        <div>
+          <h2 class="cta-band__title" id="cta-title">Your next hour could be the best one today.</h2>
+          <p class="cta-band__text">Open Aether, pick three things, and let the rest of the internet wait.</p>
+        </div>
+        <a class="btn btn--light" href="#pricing">Start a free focus block</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-labelledby="footer-title">
+    <h2 class="visually-hidden" id="footer-title">Site footer</h2>
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="Aether home">
+          <img class="brand__mark" src="assets/logo-mark.svg" alt="" width="34" height="34">
+          <span class="brand__name">Aether</span>
+        </a>
+        <p class="footer__tagline">A calmer workspace for people who do the work.</p>
+
+        <div class="footer__contact">
+          <a href="mailto:hello@aether.works">hello@aether.works</a>
+          <span>Kathmandu · Remote-first</span>
+        </div>
+
+        <ul class="social" aria-label="Aether on social platforms">
+          <li>
+            <a href="#" aria-label="Aether on X (placeholder link)">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M17.6 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.7L4.3 21H1l7.7-8.8L1.4 3h6.8l4.7 6.2L17.6 3zm-1.2 16h1.8L7.6 4.9H5.7L16.4 19z"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Aether on GitHub (placeholder link)">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M12 2.2a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.7c-2.7.6-3.3-1.3-3.3-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.4-2.2-.2-4.5-1.1-4.5-4.9 0-1.1.4-2 1-2.7-.1-.2-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 4.9 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.5.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.3 4.7-4.5 4.9.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.2z"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Aether on LinkedIn (placeholder link)">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9.5 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.5 4.7 5.8V21h-4v-5.9c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21h-4z"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-labelledby="footer-product">
+        <h3 class="footer__heading" id="footer-product">Product</h3>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#stories">Demo content</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-labelledby="footer-company">
+        <h3 class="footer__heading" id="footer-company">This demo</h3>
+        <ul>
+          <li><a href="#top">About this build</a></li>
+          <li><a href="#how">Design notes</a></li>
+          <li><a href="#stories">Sample content</a></li>
+          <li><a href="mailto:hello@aether.works">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-labelledby="footer-resources">
+        <h3 class="footer__heading" id="footer-resources">Notes</h3>
+        <ul>
+          <li><a href="#features">Feature checklist</a></li>
+          <li><a href="#how">Layout structure</a></li>
+          <li><a href="#pricing">Responsive pricing</a></li>
+          <li><a href="#top">Back to top</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© 2026 Aether — a fictional demo brand. Not a real product.</p>
+      <p>Built as a front-end exercise. <span aria-hidden="true">·</span> <a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+</body>
+</html>
