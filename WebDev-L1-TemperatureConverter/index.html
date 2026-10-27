@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Converter — Celsius, Fahrenheit &amp; Kelvin</title>
+  <meta name="description" content="A clean temperature converter that shows Celsius, Fahrenheit and Kelvin at once, with live conversion and a friendly absolute-zero check.">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/converter.js" defer></script>
+</head>
+<body>
+  <div class="bg-blob bg-blob--one" aria-hidden="true"></div>
+  <div class="bg-blob bg-blob--two" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="page__header">
+      <p class="page__badge">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M10 13.6V5.2a2 2 0 1 1 4 0v8.4a4.2 4.2 0 1 1-4 0z"></path>
+          <path d="M12 9v6.2"></path>
+        </svg>
+        OIBSIP · Web Development Level 1
+      </p>
+      <h1 class="page__title">Temperature Converter</h1>
+      <p class="page__subtitle">
+        Enter a temperature and see it in Celsius, Fahrenheit and Kelvin at the same time.
+      </p>
+    </header>
+
+    <section class="card" aria-labelledby="card-title">
+      <h2 class="visually-hidden" id="card-title">Convert a temperature</h2>
+
+      <form class="converter" id="converter-form" novalidate>
+        <div class="field">
+          <label class="field__label" for="temperature">Temperature</label>
+          <div class="input-shell">
+            <input
+              class="input"
+              id="temperature"
+              name="temperature"
+              type="number"
+              inputmode="decimal"
+              step="any"
+              placeholder="e.g. 36.6"
+              autocomplete="off"
+              spellcheck="false"
+              aria-describedby="input-hint error-message">
+            <span class="input-shell__unit" id="input-unit-symbol" aria-hidden="true">°C</span>
+          </div>
+          <p class="field__hint" id="input-hint">
+            Digits only — for example <span class="field__example">21.5</span>, <span class="field__example">-4</span> or
+            <span class="field__example">98.6</span>. Press <kbd>Enter</kbd> to convert.
+          </p>
+        </div>
+
+        <fieldset class="unit-picker">
+          <legend class="field__label">Input unit</legend>
+          <div class="unit-picker__options">
+            <label class="unit-option">
+              <input type="radio" name="unit" value="C" checked>
+              <span class="unit-option__body">
+                <span class="unit-option__symbol">°C</span>
+                <span class="unit-option__name">Celsius</span>
+              </span>
+            </label>
+            <label class="unit-option">
+              <input type="radio" name="unit" value="F">
+              <span class="unit-option__body">
+                <span class="unit-option__symbol">°F</span>
+                <span class="unit-option__name">Fahrenheit</span>
+              </span>
+            </label>
+            <label class="unit-option">
+              <input type="radio" name="unit" value="K">
+              <span class="unit-option__body">
+                <span class="unit-option__symbol">K</span>
+                <span class="unit-option__name">Kelvin</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button class="btn btn--primary" type="submit" id="convert-button">Convert</button>
+          <button class="btn btn--ghost" type="button" id="reset-button">Reset</button>
+        </div>
+
+        <p class="form-status" id="status" role="status">Waiting for a value…</p>
+
+        <div class="form-alert" id="error-message" role="alert" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 7.5v5.5M12 16.5h.01"></path>
+          </svg>
+          <p id="error-text"></p>
+        </div>
+      </form>
+
+      <section class="results" aria-labelledby="results-title">
+        <div class="results__head">
+          <h2 class="results__title" id="results-title">Result</h2>
+          <p class="results__hint">All three units, updated together</p>
+        </div>
+
+        <div class="result-grid">
+          <div class="result-tile result-tile--primary" data-unit="C">
+            <span class="result-tile__label">Celsius</span>
+            <span class="result-tile__value" data-value="C">—</span>
+            <span class="result-tile__symbol">°C</span>
+          </div>
+          <div class="result-tile" data-unit="F">
+            <span class="result-tile__label">Fahrenheit</span>
+            <span class="result-tile__value" data-value="F">—</span>
+            <span class="result-tile__symbol">°F</span>
+          </div>
+          <div class="result-tile" data-unit="K">
+            <span class="result-tile__label">Kelvin</span>
+            <span class="result-tile__value" data-value="K">—</span>
+            <span class="result-tile__symbol">K</span>
+          </div>
+        </div>
+
+        <p class="results__note">
+          Absolute zero is <strong>−273.15 °C</strong> = <strong>−459.67 °F</strong> = <strong>0 K</strong>.
+          Values below it are rejected.
+        </p>
+        <p class="results__formula">°F = °C × 9⁄5 + 32 &nbsp;·&nbsp; K = °C + 273.15</p>
+      </section>
+    </section>
+
+    <footer class="page__footer">
+      <p>OIBSIP Level 1 — Temperature Converter</p>
+      <p>Hand-written HTML, CSS and JavaScript by Sushant Poudel</p>
+    </footer>
+  </main>
+</body>
+</html>
