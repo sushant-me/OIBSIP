@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator — OIBSIP Web Development Level 2</title>
+  <meta name="description" content="A keyboard-friendly browser calculator built with vanilla HTML, CSS and JavaScript: operator chaining, history, percentages and friendly division-by-zero handling.">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#keypad">Skip to keypad</a>
+
+  <main class="page">
+    <header class="masthead">
+      <p class="masthead__eyebrow">Oasis Infobyte SIP &middot; Web Development Level 2</p>
+      <h1 class="masthead__title">Calculator</h1>
+      <p class="masthead__lede">
+        Arithmetic that keeps up with your keyboard &mdash; decimal-safe, division-by-zero-proof,
+        with a running history you can reuse.
+      </p>
+    </header>
+
+    <div class="workspace">
+      <section class="calculator" aria-labelledby="calc-heading">
+        <h2 class="visually-hidden" id="calc-heading">Calculator</h2>
+
+        <div class="display" id="display-panel">
+          <p class="display__expression" id="expression">Ready</p>
+          <p class="display__value" id="display" data-size="normal" role="status" aria-live="polite" aria-atomic="true">0</p>
+        </div>
+
+        <div class="keypad" id="keypad" role="group" aria-label="Calculator keypad">
+          <button type="button" class="key key--function" data-action="clear" aria-label="Clear all">C</button>
+          <button type="button" class="key key--function" data-action="backspace" aria-label="Delete last character">&#9003;</button>
+          <button type="button" class="key key--function" data-action="percent" aria-label="Convert current entry to a percentage">%</button>
+          <button type="button" class="key key--operator" data-action="operator" data-op="/" aria-label="Divide">&divide;</button>
+
+          <button type="button" class="key key--number" data-action="digit" data-digit="7">7</button>
+          <button type="button" class="key key--number" data-action="digit" data-digit="8">8</button>
+          <button type="button" class="key key--number" data-action="digit" data-digit="9">9</button>
+          <button type="button" class="key key--operator" data-action="operator" data-op="*" aria-label="Multiply">&times;</button>
+
+          <button type="button" class="key key--number" data-action="digit" data-digit="4">4</button>
+          <button type="button" class="key key--number" data-action="digit" data-digit="5">5</button>
+          <button type="button" class="key key--number" data-action="digit" data-digit="6">6</button>
+          <button type="button" class="key key--operator" data-action="operator" data-op="-" aria-label="Subtract">&minus;</button>
+
+          <button type="button" class="key key--number" data-action="digit" data-digit="1">1</button>
+          <button type="button" class="key key--number" data-action="digit" data-digit="2">2</button>
+          <button type="button" class="key key--number" data-action="digit" data-digit="3">3</button>
+          <button type="button" class="key key--operator" data-action="operator" data-op="+" aria-label="Add">+</button>
+
+          <button type="button" class="key key--function" data-action="sign" aria-label="Toggle positive or negative sign">&plusmn;</button>
+          <button type="button" class="key key--number" data-action="digit" data-digit="0">0</button>
+          <button type="button" class="key key--decimal" data-action="decimal" aria-label="Decimal point">.</button>
+          <button type="button" class="key key--equals" data-action="equals" aria-label="Equals">=</button>
+        </div>
+      </section>
+
+      <div class="sidebar">
+        <aside class="panel history" aria-labelledby="history-heading">
+          <div class="history__header">
+            <h2 class="history__title" id="history-heading">History</h2>
+            <button type="button" class="history__clear" id="clear-history">Clear history</button>
+          </div>
+          <ol class="history__list" id="history-list"></ol>
+          <p class="history__empty" id="history-empty">
+            No calculations yet. Press <kbd>=</kbd> to record one.
+          </p>
+        </aside>
+
+        <section class="panel shortcuts" aria-labelledby="shortcuts-heading">
+          <h2 class="shortcuts__title" id="shortcuts-heading">Keyboard</h2>
+          <dl class="shortcuts__list">
+            <div class="shortcuts__row">
+              <dt><kbd>0</kbd>&ndash;<kbd>9</kbd> <kbd>.</kbd></dt>
+              <dd>Enter a number</dd>
+            </div>
+            <div class="shortcuts__row">
+              <dt><kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd></dt>
+              <dd>Operators</dd>
+            </div>
+            <div class="shortcuts__row">
+              <dt><kbd>Enter</kbd> <kbd>=</kbd></dt>
+              <dd>Evaluate</dd>
+            </div>
+            <div class="shortcuts__row">
+              <dt><kbd>Backspace</kbd></dt>
+              <dd>Delete last character</dd>
+            </div>
+            <div class="shortcuts__row">
+              <dt><kbd>Esc</kbd> <kbd>C</kbd></dt>
+              <dd>Clear everything</dd>
+            </div>
+            <div class="shortcuts__row">
+              <dt><kbd>%</kbd> <kbd>S</kbd></dt>
+              <dd>Percent / sign toggle</dd>
+            </div>
+          </dl>
+          <p class="shortcuts__note">Click a history row to reuse its result.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Built with hand-written HTML, CSS and vanilla JavaScript &mdash; no libraries, no dynamic code execution.</p>
+    </footer>
+  </main>
+</body>
+</html>
