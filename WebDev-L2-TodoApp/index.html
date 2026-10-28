@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taskline — To-Do Web App</title>
+  <meta name="description" content="Taskline is a calm, keyboard-friendly to-do app with pending and completed lists, inline editing, timestamps and local persistence.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" focusable="false">
+            <path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="brand__text">
+          <p class="brand__name">Taskline</p>
+          <p class="brand__tagline">Small tasks, kept local.</p>
+        </div>
+      </div>
+      <p class="today" id="todayChip">Today</p>
+    </header>
+
+    <main class="main" id="main">
+      <section class="composer" aria-labelledby="composerTitle">
+        <div class="composer__intro">
+          <h1 id="composerTitle">What needs doing?</h1>
+          <p class="composer__hint">
+            Press <kbd>Enter</kbd> to add · saved in this browser.
+          </p>
+        </div>
+
+        <form class="add-form" id="addForm" novalidate>
+          <div class="add-form__field">
+            <label class="visually-hidden" for="taskInput">New task</label>
+            <input
+              class="add-form__input"
+              id="taskInput"
+              name="task"
+              type="text"
+              placeholder="e.g. Draft the internship report"
+              maxlength="120"
+              autocomplete="off"
+              spellcheck="true"
+              aria-describedby="addError"
+            >
+            <p class="form-error" id="addError" role="alert" hidden></p>
+          </div>
+          <button class="btn btn--primary" type="submit">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            Add Task
+          </button>
+        </form>
+      </section>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="pending" aria-pressed="false">Pending</button>
+          <button class="filter" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+        <p class="storage-note">
+          <span class="storage-note__dot" aria-hidden="true"></span>
+          Saved locally
+        </p>
+      </div>
+
+      <div class="lists">
+        <section class="panel panel--pending" id="pendingPanel" aria-labelledby="pendingTitle">
+          <header class="panel__head">
+            <h2 class="panel__title" id="pendingTitle">Pending</h2>
+            <span class="count count--pending" id="pendingCount">0 pending</span>
+          </header>
+
+          <ul class="task-list" id="pendingList"></ul>
+
+          <div class="empty" id="pendingEmpty" hidden>
+            <span class="empty__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" focusable="false">
+                <path d="M8 6h12M8 12h12M8 18h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="4" cy="6" r="1.4" fill="currentColor"/>
+                <circle cx="4" cy="12" r="1.4" fill="currentColor"/>
+                <circle cx="4" cy="18" r="1.4" fill="currentColor"/>
+              </svg>
+            </span>
+            <p class="empty__title" id="pendingEmptyTitle">Nothing here yet</p>
+            <p class="empty__text" id="pendingEmptyText">Add a task above and it will show up in this list.</p>
+          </div>
+        </section>
+
+        <section class="panel panel--completed" id="completedPanel" aria-labelledby="completedTitle">
+          <header class="panel__head">
+            <h2 class="panel__title" id="completedTitle">Completed</h2>
+            <span class="count count--completed" id="completedCount">0 completed</span>
+          </header>
+
+          <ul class="task-list task-list--completed" id="completedList"></ul>
+
+          <div class="empty" id="completedEmpty" hidden>
+            <span class="empty__icon empty__icon--completed" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" focusable="false">
+                <path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <p class="empty__title" id="completedEmptyTitle">Nothing completed yet</p>
+            <p class="empty__text" id="completedEmptyText">Use the round button on a task and it moves here, with a completion time.</p>
+          </div>
+
+          <div class="panel__foot">
+            <button class="btn btn--ghost" id="clearCompleted" type="button" hidden>Clear completed</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Taskline · To-Do Web App · Oasis Infobyte SIP</p>
+      <p class="footer__author">Built by Sushant Poudel</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <p class="toast__text" id="toastText"></p>
+    <button class="toast__action" id="toastAction" type="button" hidden>Undo</button>
+    <button class="toast__close" id="toastClose" type="button" aria-label="Dismiss notification">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+        <path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <p class="visually-hidden" id="liveStatus" role="status" aria-live="polite"></p>
+</body>
+</html>
