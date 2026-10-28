@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="A gold monogram A">
+  <rect width="64" height="64" rx="10" fill="#1c1a17"/>
+  <path d="M32 10 L48 52 H41.5 L37.8 41 H26.2 L22.5 52 H16 Z M28.6 35.5 H35.4 L32 25.6 Z" fill="#d8bb6a"/>
+  <rect x="18" y="55" width="28" height="1.6" fill="#d8bb6a" opacity="0.55"/>
+</svg>
