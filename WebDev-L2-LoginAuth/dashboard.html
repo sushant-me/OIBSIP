@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard — Latch</title>
+  <meta name="description" content="Latch protected dashboard: account details, password storage scheme and an active session guarded by sessionStorage.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body class="page page--dashboard is-pending">
+  <div class="app-shell">
+    <header class="appbar">
+      <a class="brand" href="dashboard.html" aria-label="Latch dashboard home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="5" y="10" width="14" height="10" rx="2.6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="14.8" r="1.3" fill="currentColor"/>
+            <path d="M12 16v1.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">Latch</span>
+      </a>
+
+      <div class="appbar__actions">
+        <span class="pill pill--secure">
+          <span class="pill__dot" aria-hidden="true"></span>
+          Session active
+        </span>
+        <button class="btn btn--ghost-dark btn--small" type="button" id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <main class="dashboard" id="dashboard">
+      <div class="welcome">
+        <p class="eyebrow">Protected page</p>
+        <h1>Welcome back, <span id="displayName">there</span>.</h1>
+        <p class="welcome__sub">
+          This page checks <code>sessionStorage</code> before it shows anything. Open
+          <code>dashboard.html</code> in a fresh tab and you will land on the sign-in page instead.
+        </p>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="card card--account" aria-labelledby="accountTitle">
+          <div class="card__head">
+            <h2 id="accountTitle">Account</h2>
+            <span class="badge badge--ok">Signed in</span>
+          </div>
+
+          <div class="account">
+            <span class="avatar" id="avatar" aria-hidden="true">?</span>
+            <div>
+              <p class="account__name" id="accountUsername">—</p>
+              <p class="account__email" id="accountEmail">—</p>
+            </div>
+          </div>
+
+          <dl class="meta-list">
+            <div>
+              <dt>Member since</dt>
+              <dd id="memberSince">—</dd>
+            </div>
+            <div>
+              <dt>This session</dt>
+              <dd id="sessionStarted">—</dd>
+            </div>
+            <div>
+              <dt>Session storage</dt>
+              <dd>sessionStorage — cleared when this tab closes</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="card card--security" aria-labelledby="securityTitle">
+          <div class="card__head">
+            <h2 id="securityTitle">How your password is stored</h2>
+            <span class="badge badge--ok">Hashed</span>
+          </div>
+
+          <dl class="meta-list">
+            <div>
+              <dt>Algorithm</dt>
+              <dd>SHA-256 via <code>crypto.subtle.digest</code></dd>
+            </div>
+            <div>
+              <dt>Iterations</dt>
+              <dd id="iterations">—</dd>
+            </div>
+            <div>
+              <dt>Salt (hex)</dt>
+              <dd class="mono" id="salt">—</dd>
+            </div>
+            <div>
+              <dt>Stored hash</dt>
+              <dd class="mono" id="hashPrefix">—</dd>
+            </div>
+          </dl>
+
+          <p class="card__note">
+            The password itself is not saved anywhere. Latch keeps the salt and the hash above,
+            in localStorage, and compares hashes when you sign in.
+          </p>
+
+          <details class="record">
+            <summary>Show the stored user record</summary>
+            <pre id="userRecord">{}</pre>
+          </details>
+        </section>
+
+        <section class="card card--session" aria-labelledby="sessionTitle">
+          <div class="card__head">
+            <h2 id="sessionTitle">Session guard</h2>
+            <span class="badge badge--ok">Active</span>
+          </div>
+
+          <ul class="guard-list">
+            <li>
+              <span class="guard-list__icon" aria-hidden="true"></span>
+              A missing or broken session at <code>dashboard.html</code> redirects to the login page.
+            </li>
+            <li>
+              <span class="guard-list__icon" aria-hidden="true"></span>
+              Logging out removes the session key before the redirect, so the back button cannot reopen this page.
+            </li>
+            <li>
+              <span class="guard-list__icon" aria-hidden="true"></span>
+              The session lives in sessionStorage, so closing this tab ends it.
+            </li>
+          </ul>
+
+          <div class="card__actions">
+            <button class="btn btn--ghost-dark btn--small" type="button" id="simulateExpiry">
+              Simulate an expired session
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <footer class="app-foot">
+        <p>Latch · Login Authentication System · Oasis Infobyte SIP</p>
+        <p>Sushant Poudel</p>
+      </footer>
+    </main>
+  </div>
+
+  <p class="visually-hidden" id="liveStatus" role="status" aria-live="polite"></p>
+</body>
+</html>

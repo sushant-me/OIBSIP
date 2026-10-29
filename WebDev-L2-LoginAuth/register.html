@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account — Latch</title>
+  <meta name="description" content="Create a Latch account: username, email and a password that is salted and hashed in the browser with SHA-256.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/register.js" defer></script>
+</head>
+<body class="page page--auth">
+  <div class="auth-shell">
+    <section class="brand-panel" aria-label="About Latch">
+      <p class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="5" y="10" width="14" height="10" rx="2.6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="14.8" r="1.3" fill="currentColor"/>
+            <path d="M12 16v1.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">Latch</span>
+      </p>
+
+      <p class="eyebrow">Create an account</p>
+      <h1 class="brand-panel__title">A password we never see.</h1>
+      <p class="brand-panel__lede">
+        Registration checks your password rules as you type, then stores only a random salt
+        and a SHA-256 hash. Signing in hashes your input again and compares the result.
+      </p>
+
+      <ul class="feature-list">
+        <li>
+          <span class="feature-list__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="m5 13 4.2 4.2L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45"/>
+            </svg>
+          </span>
+          <div>
+            <strong>Two password rules, checked live</strong>
+            <span>At least 8 characters and at least 1 number — both tick green while you type.</span>
+          </div>
+        </li>
+        <li>
+          <span class="feature-list__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <circle cx="19" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+          </span>
+          <div>
+            <strong>Usernames and emails stay unique</strong>
+            <span>If either one is already registered, the form says so and keeps your input.</span>
+          </div>
+        </li>
+        <li>
+          <span class="feature-list__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <rect x="4" y="4" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M8 9h8M8 12.5h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <strong>What actually gets stored</strong>
+            <span>Username, email, a 32-character salt and a 64-character hash. That is all.</span>
+          </div>
+        </li>
+      </ul>
+
+      <p class="brand-panel__foot">OIBSIP · Web Development &amp; Designing · Login Authentication System</p>
+    </section>
+
+    <main class="auth-main">
+      <div class="mobile-brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="5" y="10" width="14" height="10" rx="2.6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="14.8" r="1.3" fill="currentColor"/>
+            <path d="M12 16v1.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">Latch</span>
+        <span class="mobile-brand__badge">Auth demo</span>
+      </div>
+
+      <section class="auth-card" aria-labelledby="registerTitle">
+        <header class="auth-card__head">
+          <p class="eyebrow eyebrow--card">Register</p>
+          <h2 id="registerTitle">Create your account</h2>
+          <p class="auth-card__sub">All fields are required. Only a hash of your password is saved.</p>
+        </header>
+
+        <div class="alert" id="formError" role="alert" hidden></div>
+
+        <form class="form" id="registerForm" novalidate>
+          <div class="field">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              placeholder="e.g. sushant"
+              autocomplete="username"
+              autocapitalize="none"
+              spellcheck="false"
+              maxlength="20"
+              aria-describedby="usernameHint usernameError"
+            >
+            <p class="field__hint" id="usernameHint">3–20 characters: letters, numbers, dot, dash or underscore.</p>
+            <p class="field__error" id="usernameError" role="alert" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              autocapitalize="none"
+              spellcheck="false"
+              aria-describedby="emailError"
+            >
+            <p class="field__error" id="emailError" role="alert" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="input-group">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="At least 8 characters, 1 number"
+                autocomplete="new-password"
+                maxlength="128"
+                aria-describedby="passwordRules strengthLabel passwordError"
+              >
+              <button
+                class="reveal"
+                id="togglePassword"
+                type="button"
+                aria-label="Show password"
+                aria-pressed="false"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </button>
+            </div>
+
+            <ul class="rules" id="passwordRules" aria-label="Password requirements">
+              <li class="rule" id="ruleLength">
+                <span class="rule__icon" aria-hidden="true"></span>
+                At least 8 characters
+              </li>
+              <li class="rule" id="ruleNumber">
+                <span class="rule__icon" aria-hidden="true"></span>
+                At least 1 number
+              </li>
+            </ul>
+
+            <div class="strength" id="strengthMeter" aria-hidden="true">
+              <span class="strength__bar"></span>
+              <span class="strength__bar"></span>
+              <span class="strength__bar"></span>
+              <span class="strength__bar"></span>
+            </div>
+            <p class="strength-label" id="strengthLabel" aria-live="polite">Password strength: —</p>
+            <p class="field__error" id="passwordError" role="alert" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="confirmPassword">Confirm password</label>
+            <div class="input-group">
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                placeholder="Repeat your password"
+                autocomplete="new-password"
+                maxlength="128"
+                aria-describedby="confirmError"
+              >
+              <button
+                class="reveal"
+                id="toggleConfirm"
+                type="button"
+                aria-label="Show confirmed password"
+                aria-pressed="false"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </button>
+            </div>
+            <p class="field__error" id="confirmError" role="alert" hidden></p>
+          </div>
+
+          <button class="btn btn--primary" type="submit" id="registerSubmit">Register</button>
+        </form>
+
+        <p class="switch-note">Already registered? <a href="index.html">Sign in</a></p>
+
+        <p class="secure-note" id="secureNote" hidden></p>
+      </section>
+
+      <p class="auth-main__foot">Sushant Poudel · Web Development &amp; Designing · Oasis Infobyte SIP</p>
+    </main>
+  </div>
+
+  <p class="visually-hidden" id="liveStatus" role="status" aria-live="polite"></p>
+</body>
+</html>
