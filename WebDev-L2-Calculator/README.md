@@ -1,5 +1,7 @@
 # Calculator
 
+Live demo: <https://sushant-me.github.io/OIBSIP/WebDev-L2-Calculator/>
+
 A working browser calculator built with plain HTML, CSS and JavaScript. It keeps the
 expression on screen while you type, deals with the usual edge cases (a second decimal
 point, repeated `=`, division by zero) and works from the keyboard as well as the mouse.

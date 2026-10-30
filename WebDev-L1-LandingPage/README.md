@@ -1,5 +1,7 @@
 # Aether — Landing Page
 
+Live demo: <https://sushant-me.github.io/OIBSIP/WebDev-L1-LandingPage/>
+
 This is task 1 of the OIBSIP Web Development and Designing internship: a product landing page built with HTML and CSS only. I made up a focus app called Aether and designed a page for it. The brand, the quotes and the pricing are all invented — it is a demo, not a real company.
 
 There is no JavaScript anywhere on the page. The sticky header, the product mockup in the hero and every hover state are done with HTML and CSS.

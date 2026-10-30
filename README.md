@@ -6,15 +6,15 @@ All the projects are plain HTML/CSS/JavaScript with no build tools and no extern
 
 ## Tasks
 
-| Level | Task | Project | Folder | Demo |
-|-------|------|---------|--------|------|
-| 1 | Task 1 | Landing Page — "Aether", a fictional focus workspace | [WebDev-L1-LandingPage](WebDev-L1-LandingPage) | [demo.mp4](WebDev-L1-LandingPage/demo/demo.mp4) |
-| 1 | Task 2 | Personal Portfolio | [WebDev-L1-Portfolio](WebDev-L1-Portfolio) | [demo.mp4](WebDev-L1-Portfolio/demo/demo.mp4) |
-| 1 | Task 3 | Temperature Converter | [WebDev-L1-TemperatureConverter](WebDev-L1-TemperatureConverter) | [demo.mp4](WebDev-L1-TemperatureConverter/demo/demo.mp4) |
-| 2 | Task 1 | Calculator | [WebDev-L2-Calculator](WebDev-L2-Calculator) | [demo.mp4](WebDev-L2-Calculator/demo/demo.mp4) |
-| 2 | Task 2 | Tribute Page — Ada Lovelace | [WebDev-L2-TributePage](WebDev-L2-TributePage) | [demo.mp4](WebDev-L2-TributePage/demo/demo.mp4) |
-| 2 | Task 3 | To-Do Web App — "Taskline" | [WebDev-L2-TodoApp](WebDev-L2-TodoApp) | [demo.mp4](WebDev-L2-TodoApp/demo/demo.mp4) |
-| 2 | Task 4 | Login Authentication System — "Latch" | [WebDev-L2-LoginAuth](WebDev-L2-LoginAuth) | [demo.mp4](WebDev-L2-LoginAuth/demo/demo.mp4) |
+| Level | Task | Project | Folder | Live demo | Demo video |
+|-------|------|---------|--------|-----------|------------|
+| 1 | Task 1 | Landing Page — "Aether", a fictional focus workspace | [WebDev-L1-LandingPage](WebDev-L1-LandingPage) | [Open](https://sushant-me.github.io/OIBSIP/WebDev-L1-LandingPage/) | [demo.mp4](WebDev-L1-LandingPage/demo/demo.mp4) |
+| 1 | Task 2 | Personal Portfolio | [WebDev-L1-Portfolio](WebDev-L1-Portfolio) | [Open](https://sushant-me.github.io/OIBSIP/WebDev-L1-Portfolio/) | [demo.mp4](WebDev-L1-Portfolio/demo/demo.mp4) |
+| 1 | Task 3 | Temperature Converter | [WebDev-L1-TemperatureConverter](WebDev-L1-TemperatureConverter) | [Open](https://sushant-me.github.io/OIBSIP/WebDev-L1-TemperatureConverter/) | [demo.mp4](WebDev-L1-TemperatureConverter/demo/demo.mp4) |
+| 2 | Task 1 | Calculator | [WebDev-L2-Calculator](WebDev-L2-Calculator) | [Open](https://sushant-me.github.io/OIBSIP/WebDev-L2-Calculator/) | [demo.mp4](WebDev-L2-Calculator/demo/demo.mp4) |
+| 2 | Task 2 | Tribute Page — Ada Lovelace | [WebDev-L2-TributePage](WebDev-L2-TributePage) | [Open](https://sushant-me.github.io/OIBSIP/WebDev-L2-TributePage/) | [demo.mp4](WebDev-L2-TributePage/demo/demo.mp4) |
+| 2 | Task 3 | To-Do Web App — "Taskline" | [WebDev-L2-TodoApp](WebDev-L2-TodoApp) | [Open](https://sushant-me.github.io/OIBSIP/WebDev-L2-TodoApp/) | [demo.mp4](WebDev-L2-TodoApp/demo/demo.mp4) |
+| 2 | Task 4 | Login Authentication System — "Latch" | [WebDev-L2-LoginAuth](WebDev-L2-LoginAuth) | [Open](https://sushant-me.github.io/OIBSIP/WebDev-L2-LoginAuth/) | [demo.mp4](WebDev-L2-LoginAuth/demo/demo.mp4) |
 
 Each task folder has its own `README.md` with the feature checklist, screenshots, and run instructions, plus a `demo-notes.md` describing what to click while recording the walkthrough.
 

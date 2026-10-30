@@ -1,5 +1,7 @@
 # Temperature Converter
 
+Live demo: <https://sushant-me.github.io/OIBSIP/WebDev-L1-TemperatureConverter/>
+
 A small converter for Celsius, Fahrenheit and Kelvin, built for Level 1 task 3 of the Oasis Infobyte internship. It is one centred card: type a temperature, pick the unit it is in, and all three units are shown together below. The page uses plain HTML, CSS and JavaScript with no libraries.
 
 I used Celsius as the internal unit. Whatever is entered is converted to Celsius first, then back out to all three scales, which keeps the code short and stops the three results from drifting apart.

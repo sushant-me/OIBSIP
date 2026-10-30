@@ -1,5 +1,7 @@
 # Latch — Login Authentication System
 
+Live demo: <https://sushant-me.github.io/OIBSIP/WebDev-L2-LoginAuth/>
+
 Latch is the Login Authentication System task from the OIBSIP Web Development & Designing
 (Level 2) track, built with approach A: front end only, no server. It has a registration
 page, a sign-in page and a dashboard that refuses to load without a session. Accounts are

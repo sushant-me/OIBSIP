@@ -1,5 +1,7 @@
 # Sushant Poudel — Personal Portfolio
 
+Live demo: <https://sushant-me.github.io/OIBSIP/WebDev-L1-Portfolio/>
+
 A one-page portfolio for Sushant Poudel, a web developer and security researcher based in Kathmandu. I built it as Level 1 task 2 of the Oasis Infobyte internship. The layout is a dark, full-width page with a single card-style contact block at the end.
 
 The name, role and contact details are real. The avatar is an initials placeholder while there is no photo, and the LinkedIn URL is a placeholder that should be replaced before this goes anywhere public. The three project cards link to my GitHub profile rather than to individual repositories.
